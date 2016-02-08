@@ -1,10 +1,4 @@
 # LogSendSocket
-
-
-# Version:     0.0.1
-# Author:      Shadab Khan
-# Contact:     shad.edims@gmail.com
-# Twitter:     @shad_tech
  
 Installation steps
 git clone https://github.com/shadkhan/LogSendSocket.git
