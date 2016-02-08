@@ -1,7 +1,10 @@
 # LogSendSocket
  
 Installation steps
+
 git clone https://github.com/shadkhan/LogSendSocket.git
+
+cd LogSendSocket
 
 npm install
 
