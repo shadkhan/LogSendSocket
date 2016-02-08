@@ -4,6 +4,7 @@ Installation steps
 git clone https://github.com/shadkhan/LogSendSocket.git
 
 npm install
+
 node server.js
 
 Now got localhost:8030
