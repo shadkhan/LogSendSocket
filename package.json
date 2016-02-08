@@ -1,0 +1,24 @@
+{
+  "name": "LogSendSocket",
+  "version": "0.0.1",
+  "description": "This is a logger  sample for failure Notifications using nodejs and socket.io.",
+  "main": "server.js",
+  "dependencies": {
+    "socket.io": "~1.3.5",
+    "xml2json": "~0.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shadkhan/LogSendSocket.git"
+  },
+  "author": "Shadab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shadkhan/LogSendSocket/issues"
+  }
+}

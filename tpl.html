@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>VW Tmpl-v-0.0.1 failure notification</title>
+	</head>
+	<body>
+		<time></time>
+		<div id="page">Monitor events for further action - log4js.xml file</div>
+		<div id="logger">Logger is ready, Please update or change manually anything in log4js.xml file to check	</div>
+		<div id="notify"></div>
+	<script src="socket.io/socket.io.js"></script>
+	<!-- if you use this file as client without NodeJs you can directly include socket.io here and comment above line
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script> -->
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script>
+	// connect to main server where socket is generating event from xml data.
+	// var socket = io.connect('http://192.168.129.45:8080'); 
+	// Added local server to test, you can run socket server on any external server and put the IP here in io.connect
+	var socket = io.connect('http://localhost:8030');
+	// on every message recived we print the new datas inside the #logger div
+	socket.on('notification', function (data) {
+		// convert the json string into a valid javascript object
+		var _data = JSON.parse(data);
+
+		$('#logger').html(_data.generator.exception);
+		$('time').html('Notified on :' + new Date());
+		
+		
+		// Prepare Object to send push these notifications to email queue here 
+		/* $.ajax({
+				type: "POST",
+			//	url: "/services/Mail.asmx/SendMail",
+			    // for Mandrill service testing
+				url: "/api/sendemail/",
+				cache: false,
+				contentType: "application/json; charset=utf-8",
+				data: "{ 'body':'"  + _data.test.sample + "'," +
+					  "'to': '" + "admin@vw-stage-0.0.1 + "'," +
+					  "'from': '" + "logger@vw-stage-0.0.1" + "'," +
+					  "'subject': " + "Instance Failure" + "'" +
+					"}",	
+				dataType: "json",
+				complete: function (transport) { if (transport.status == 200) $("#notify").html("Success"); else alert("Please try again later"); }
+        }); */
+		
+		
+		
+		
+	});
+	</script>
+	</body>
+</html>
